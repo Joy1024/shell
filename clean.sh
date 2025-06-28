@@ -1,8 +1,12 @@
 #!/bin/env bash
-
-# 每天早上10点和下午5点执行清理脚本
-# 在 /etc/crontab 中添加以下行
-# 0 17 * * * /clean.sh   # 每天下午5点执行
+# 使用说明：
+# 1. 将此脚本保存为 clean.sh
+# 2. 给予执行权限：chmod +x clean.sh
+# 3. 以 root 用户运行：sudo ./clean.sh <username>
+# 4. 将此脚本添加到 crontab 定时任务中
+# 5. crontab -e 
+# 6. 添加以下行以每天17点执行清理任务
+# 0 17 * * * /clean.sh <username>  # 每天下午5点执行
 
 # 日志文件
 LOG_FILE="~/clean.log"
