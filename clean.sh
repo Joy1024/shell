@@ -1,15 +1,18 @@
 #!/bin/env bash
 # 使用说明：
-# 1. 将此脚本保存为 clean.sh
+# 1. 将此脚本保存为 clean.sh，放置到 /home/<username>/ 目录下
 # 2. 给予执行权限：chmod +x clean.sh
 # 3. 以 root 用户运行：sudo ./clean.sh <username>
 # 4. 将此脚本添加到 crontab 定时任务中
-# 5. crontab -e 
+# 5. sudo crontab -e 
 # 6. 添加以下行以每天17点执行清理任务
-# 0 17 * * * /clean.sh <username>  # 每天下午5点执行
+# 0 17 * * * /home/<username>/clean.sh <username>  # 每天下午5点执行
+
+# 文件所在目录
+PWD=$(cd "$(dirname "$0")" && pwd)
 
 # 日志文件
-LOG_FILE="~/clean.log"
+LOG_FILE="$PWD/clean.log"
 
 # 记录日志
 log() {
